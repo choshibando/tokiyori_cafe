@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOKIYORI cafe | 銚子・外川の海辺のカフェダイニング</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Noto Serif JP"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#1A2E40',   
+                            sand: '#F4EBE1',   
+                            accent: '#D4AF37', 
+                            gray: '#4A5568',
+                            light: '#FAF7F2'   
+                        }
+                    },
+                    backgroundImage: {
+                        'hotel-pattern': "linear-gradient(to bottom, rgba(26, 46, 64, 0.8), rgba(26, 46, 64, 0.95)), url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=80')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-serif bg-brand-light text-brand-navy antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- ナビゲーション -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-left">
+                <a href="#" class="text-xl md:text-2xl font-serif font-medium text-white tracking-[0.2em]" id="logo">TOKIYORI</a>
+                <p class="text-[9px] text-white/70 tracking-[0.3em] uppercase hidden md:block mt-0.5" id="logo-sub">cafe & dining</p>
+            </div>
+            
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-white tracking-widest" id="nav-links">
+                <a href="#story" class="hover:text-brand-accent transition">想い</a>
+                <a href="#menu" class="hover:text-brand-accent transition">お品書き</a>
+                <a href="#coffee-guide" class="hover:text-brand-accent transition">珈琲案内</a>
+                <a href="#event" class="hover:text-brand-accent transition">営業日・イベント</a>
+                <a href="#hotel" class="hover:text-brand-accent transition">2階の宿</a>
+                <a href="#access" class="hover:text-brand-accent transition">地図・駐車場</a>
+            </nav>
+            <!-- モバイルメニューボタン -->
+            <button class="md:hidden text-white focus:outline-none" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- モバイルメニュー -->
+        <div class="md:hidden hidden bg-brand-navy w-full absolute top-full left-0 border-t border-white/10 shadow-xl" id="mobile-menu">
+            <div class="flex flex-col text-center py-4 text-white text-sm tracking-widest">
+                <a href="#story" class="py-3 hover:text-brand-accent">想い</a>
+                <a href="#menu" class="py-3 hover:text-brand-accent">お品書き</a>
+                <a href="#coffee-guide" class="py-3 hover:text-brand-accent">珈琲案内</a>
+                <a href="#event" class="py-3 hover:text-brand-accent">営業日・イベント</a>
+                <a href="#hotel" class="py-3 hover:text-brand-accent">2階の宿</a>
+                <a href="#access" class="py-3 hover:text-brand-accent">地図・駐車場</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ファーストビュー (Hero) 写真背景版 -->
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden bg-brand-navy bg-cover bg-center" style="background-image: url('toki.jpg');">
+        <!-- 暗いオーバーレイ -->
+        <div class="absolute inset-0 bg-brand-navy/50 z-10"></div>
+
+        <!-- テキストコンテンツ -->
+        <div class="relative z-20 flex flex-col items-center">
+            <p class="text-brand-accent text-sm md:text-base font-bold tracking-[0.2em] mb-4 uppercase fade-in" style="transition-delay: 0.2s;">Choshi Tokawa Coast</p>
+            <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-[0.15em] leading-relaxed mb-6 fade-in drop-shadow-lg" style="transition-delay: 0.4s;">
+                海とゆっくり流れる時間。<br class="hidden md:block">
+                <span class="inline-block mt-2">外川で過ごす、特別なカフェタイム。</span>
+            </h1>
+            <p class="text-white/90 text-sm md:text-base max-w-2xl mx-auto leading-loose fade-in drop-shadow-md" style="transition-delay: 0.6s;">
+                本州最東端の静かな漁師町、外川。<br>
+                波の音と、コーヒーの香り。日々を忘れ、心ほどける大人の休息をここで。
+            </p>
+            
+            <div class="flex gap-4 mt-10 fade-in" style="transition-delay: 0.8s;">
+                <a href="#menu" class="border border-white/50 bg-brand-navy/40 hover:bg-brand-navy text-white px-6 py-3 rounded shadow hover:shadow-lg tracking-widest text-sm transition duration-300 backdrop-blur-sm">お品書き</a>
+                <a href="#access" class="border border-white/50 bg-white/10 hover:bg-white hover:text-brand-navy text-white px-6 py-3 rounded shadow hover:shadow-lg tracking-widest text-sm transition duration-300 backdrop-blur-sm">アクセス</a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce fade-in z-20" style="transition-delay: 1.2s;">
+            <a href="#story" class="text-white/70 hover:text-white transition">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- STORY (情緒重視パターン) & CONCEPT -->
+    <section id="story" class="py-24 md:py-32 px-6">
+        <div class="container mx-auto max-w-3xl text-center fade-in mb-24">
+            <h2 class="text-brand-accent text-3xl mb-4 font-medium tracking-[0.2em]">Story</h2>
+            <h3 class="text-2xl md:text-3xl font-medium tracking-widest mb-12">心解きほぐす、憩いの場</h3>
+            
+            <div class="space-y-8 text-brand-gray leading-loose text-justify md:text-center text-sm md:text-base font-light">
+                <p>
+                    本州最東端の静かな港町、千葉県銚子市外川（とかわ）町。<br class="hidden md:inline">
+                    ここは、地元の人にとっても「とっておきの場所」と呼べるほど、<br class="hidden md:inline">
+                    穏やかで優しい時間が流れる海辺の町です。
+                </p>
+                <p>
+                    かつて地域で愛されていた『カラコヤ』。<br class="hidden md:inline">
+                    その建物の面影と、そこにあった温かな想いを受け継ぎつつ、<br class="hidden md:inline">
+                    私たちは新たな憩いの場としてこの扉を開きました。
+                </p>
+                <p>
+                    こだわりの香り高いコーヒーと、地元食材を活かした料理。<br class="hidden md:inline">
+                    波の音を遠くに感じながら、日常の喧騒を忘れ、<br class="hidden md:inline">
+                    ゆっくりとご自身と向き合うひとときをお過ごしください。
+                </p>
+            </div>
+        </div>
+
+        <div class="container mx-auto max-w-3xl fade-in">
+            <div class="text-center mb-10">
+                <span class="text-brand-accent text-sm font-bold tracking-widest block mb-2 uppercase">CONCEPT</span>
+                <h2 class="text-2xl md:text-3xl font-medium text-brand-navy relative pb-4 inline-block">
+                    「TOKIYORI」に込めた3つの想い
+                    <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-brand-accent"></span>
+                </h2>
+            </div>
+             
+            <div class="bg-white border border-brand-sand p-8 md:p-12 rounded shadow-sm text-left">
+                <div class="space-y-10 text-brand-gray">
+                    <div>
+                        <h3 class="font-medium text-brand-navy text-lg flex items-center gap-3 mb-3">
+                            <span class="bg-brand-sand text-brand-navy px-3 py-1 rounded-sm text-xs font-bold tracking-widest">1つ目</span>
+                            <span class="tracking-widest">時「より」</span>
+                        </h3>
+                        <p class="text-sm md:text-base leading-relaxed pl-4 border-l border-brand-accent/40 font-light">
+                            くつろいでいただいたり、ときにはtokiyoriメンバーとお話ししたり。<br>
+                            お店で過ごした実際の時間よりも”濃い”時間を過ごして頂きたいという思い。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-medium text-brand-navy text-lg flex items-center gap-3 mb-3">
+                            <span class="bg-brand-sand text-brand-navy px-3 py-1 rounded-sm text-xs font-bold tracking-widest">2つ目</span>
+                            <span class="tracking-widest">時「寄り」</span>
+                        </h3>
+                        <p class="text-sm md:text-base leading-relaxed pl-4 border-l border-brand-accent/40 font-light">
+                            お茶をしにくる、パスタやスイーツを食べにくる。<br>
+                            一人で勉強をしにきたり、デートをしにきたり、メンバーに会いにきたり…<br>
+                            どんなシチュエーションでも寄り添える場所でありたいという思い。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-medium text-brand-navy text-lg flex items-center gap-3 mb-3">
+                            <span class="bg-brand-sand text-brand-navy px-3 py-1 rounded-sm text-xs font-bold tracking-widest">3つ目</span>
+                            <span class="tracking-widest">時「折」</span>
+                        </h3>
+                        <p class="text-sm md:text-base leading-relaxed pl-4 border-l border-brand-accent/40 font-light">
+                            地元の方も観光でいらした方も、そして、まだこれていない方も。<br>
+                            ふと、「あ、トキヨリカフェ行きたいな」と時折思い出してもらいたいという思い。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="py-24 bg-white border-t border-brand-sand px-6">
+        <div class="container mx-auto max-w-5xl fade-in">
+            <div class="text-center mb-16">
+                <span class="text-brand-accent text-sm font-bold tracking-widest block mb-2 uppercase">MENU</span>
+                <h2 class="text-3xl font-medium tracking-widest text-brand-navy">お品書き</h2>
+                <p class="text-sm text-brand-gray mt-4 font-light">素材にこだわり、白砂糖や小麦粉を極力控えた体に優しい手作り料理</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-brand-light border border-brand-sand p-4 rounded text-center mb-16 text-sm text-brand-navy font-medium tracking-widest">
+                <i class="fa-solid fa-utensils text-brand-accent mr-2"></i>
+                ランチメニューご提供時間： 11:00 〜 14:00
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
+                <!-- Rice & Curry -->
+                <div>
+                    <h3 class="text-xl font-medium text-brand-navy mb-8 pb-3 border-b border-brand-sand flex items-center gap-3 tracking-widest">
+                        <i class="fa-solid fa-wheat-awn-circle-exclamation text-brand-accent"></i>
+                        Rice & Curry
+                    </h3>
+                    <div class="bg-brand-light p-6 md:p-8 rounded border border-brand-sand relative">
+                        <div class="flex justify-between items-start mb-3">
+                            <h4 class="font-medium text-brand-navy text-lg tracking-wide">テルキーマカレー</h4>
+                            <span class="font-medium text-brand-navy tracking-wider">¥1,300</span>
+                        </div>
+                        <span class="inline-block border border-brand-navy text-brand-navy text-[10px] px-2 py-1 rounded-sm mb-4 tracking-widest">小麦粉不使用（グルテンフリー）</span>
+                        <p class="text-sm text-brand-gray mb-6 leading-relaxed font-light">小麦粉を一切使わない、お野菜の甘みが引き立つ体に優しい本格キーマ。</p>
+                        <div class="bg-white p-4 rounded border border-brand-sand text-xs text-brand-gray font-light">
+                            <p class="font-medium text-brand-navy mb-2 tracking-wide"><i class="fa-regular fa-lightbulb text-brand-accent mr-1"></i> 開業の原点となる一皿</p>
+                            <p class="leading-relaxed">実は、このメニューがきっかけで tokiyori.cafe が生まれました。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pasta -->
+                <div>
+                    <h3 class="text-xl font-medium text-brand-navy mb-8 pb-3 border-b border-brand-sand flex items-center gap-3 tracking-widest">
+                        <i class="fa-solid fa-plate-wheat text-brand-accent"></i>
+                        Pasta
+                    </h3>
+                    <div class="space-y-8">
+                        <div class="p-6 bg-brand-light border border-brand-sand rounded flex flex-col sm:flex-row gap-5 items-start">
+                            <div class="bg-brand-navy text-white text-center p-3 rounded w-full sm:w-20 shrink-0">
+                                <span class="text-[10px] block tracking-widest leading-none mb-1">WEEKLY</span>
+                                <span class="text-lg font-medium tracking-widest">今週</span>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-brand-navy tracking-wide mb-2">今週のパスタ</h4>
+                                <p class="text-sm text-brand-gray font-light leading-relaxed mb-2">店内の黒板にてその時々の手作りパスタをご案内しております。</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-5">
+                            <li class="flex justify-between border-b border-brand-sand/50 pb-3">
+                                <div>
+                                    <h4 class="font-medium text-brand-navy text-sm tracking-wide mb-1">濃厚カルボナーラ</h4>
+                                    <p class="text-xs text-brand-gray font-light">お客様の声から復活した、ニンニクがガツンと効いた濃厚パスタ</p>
+                                </div>
+                                <span class="font-medium text-brand-navy text-sm">¥1,200</span>
+                            </li>
+                            <li class="flex justify-between border-b border-brand-sand/50 pb-3">
+                                <div>
+                                    <h4 class="font-medium text-brand-navy text-sm tracking-wide mb-1">完熟トマトのアラビアータ</h4>
+                                    <p class="text-xs text-brand-gray font-light">トマトの甘みと唐辛子オイルが引き立つ、大人のための一皿</p>
+                                </div>
+                                <span class="font-medium text-brand-navy text-sm">¥980</span>
+                            </li>
+                            <li class="flex justify-between border-b border-brand-sand/50 pb-3">
+                                <div>
+                                    <h4 class="font-medium text-brand-navy text-sm tracking-wide mb-1">ナポリタン</h4>
+                                    <p class="text-xs text-brand-gray font-light">甘めの懐かしい味付けが旅の途中に心地よい、王道の定番</p>
+                                </div>
+                                <span class="font-medium text-brand-navy text-sm">¥860</span>
+                            </li>
+                            <li class="flex justify-between border-b border-brand-sand/50 pb-3">
+                                <div>
+                                    <h4 class="font-medium text-brand-navy text-sm tracking-wide mb-1">元祖 辛子明太子</h4>
+                                    <p class="text-xs text-brand-gray font-light">シンプルながら後を引く味わい。「なぜ、元祖??」は店内で！</p>
+                                </div>
+                                <span class="font-medium text-brand-navy text-sm">¥790</span>
+                            </li>
+                        </ul>
+                        <p class="text-xs text-right text-brand-gray font-light">* パスタの大盛りは ＋¥200 で承ります。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sweets -->
+            <div class="max-w-4xl mx-auto mt-20 pt-16 border-t border-brand-sand">
+                <h3 class="text-xl font-medium text-brand-navy text-center mb-10 flex items-center justify-center gap-3 tracking-widest">
+                    <i class="fa-solid fa-cookie-bite text-brand-accent"></i>
+                    Sweets
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-6 md:p-8 bg-brand-light border border-brand-sand rounded flex justify-between items-start">
+                        <div>
+                            <span class="inline-block border border-brand-navy text-brand-navy text-[10px] px-2 py-1 rounded-sm mb-3 tracking-widest">店内自家製 / 白砂糖不使用</span>
+                            <h4 class="font-medium text-brand-navy tracking-wide mb-2">バスクチーズケーキ</h4>
+                            <p class="text-sm text-brand-gray font-light leading-relaxed">白砂糖を一切使わず、濃厚でありながら体にすっと馴染む優しいバスクチーズケーキ。</p>
+                        </div>
+                        <span class="font-medium text-brand-navy ml-4">¥580</span>
+                    </div>
+
+                    <div class="p-6 md:p-8 bg-brand-light border border-brand-sand rounded flex justify-between items-start">
+                        <div>
+                            <span class="inline-block border border-brand-navy text-brand-navy text-[10px] px-2 py-1 rounded-sm mb-3 tracking-widest">ゼラチン不使用 / きび砂糖</span>
+                            <h4 class="font-medium text-brand-navy tracking-wide mb-2">昔ながらのプリン</h4>
+                            <p class="text-sm text-brand-gray font-light leading-relaxed">ゼラチンを使わず卵の力で固めた、少し硬めの極上レトロプリン。</p>
+                        </div>
+                        <span class="font-medium text-brand-navy ml-4">¥390</span>
+                    </div>
+                </div>
+                <div class="mt-10 text-center">
+                    <p class="text-sm text-brand-gray bg-white inline-block px-6 py-3 border border-brand-sand rounded tracking-wider font-light">
+                        <span class="font-medium text-brand-navy">今月のデザート</span> は店内の黒板をチェックしてください！
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COFFEE GUIDE -->
+    <section id="coffee-guide" class="py-24 bg-brand-light px-6">
+        <div class="container mx-auto max-w-5xl fade-in">
+            <div class="text-center mb-16">
+                <span class="text-brand-accent text-sm font-bold tracking-widest block mb-2 uppercase">COFFEE GUIDE</span>
+                <h2 class="text-3xl font-medium tracking-widest text-brand-navy mb-4">珈琲案内</h2>
+                <p class="text-sm text-brand-gray font-light">今の気分や過ごしたい時間に合わせて、あなただけの一杯をご提案します</p>
+            </div>
+
+            <div class="text-center mb-12">
+                <p class="text-sm font-medium text-brand-navy mb-6 tracking-widest"><i class="fa-regular fa-lightbulb text-brand-accent mr-1"></i> 今はどんな気分ですか？</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button onclick="filterCoffee('all')" id="btn-all" class="coffee-btn bg-brand-navy text-white text-xs px-5 py-2.5 rounded-full border border-brand-navy transition tracking-widest">すべて表示</button>
+                    <button onclick="filterCoffee('morning')" id="btn-morning" class="coffee-btn bg-white text-brand-navy text-xs px-5 py-2.5 rounded-full border border-brand-navy hover:bg-brand-navy hover:text-white transition tracking-widest">朝、すっきりと</button>
+                    <button onclick="filterCoffee('standard')" id="btn-standard" class="coffee-btn bg-white text-brand-navy text-xs px-5 py-2.5 rounded-full border border-brand-navy hover:bg-brand-navy hover:text-white transition tracking-widest">定番・ケーキに</button>
+                    <button onclick="filterCoffee('evening')" id="btn-evening" class="coffee-btn bg-white text-brand-navy text-xs px-5 py-2.5 rounded-full border border-brand-navy hover:bg-brand-navy hover:text-white transition tracking-widest">夜に安らぎたい</button>
+                    <button onclick="filterCoffee('bitter')" id="btn-bitter" class="coffee-btn bg-white text-brand-navy text-xs px-5 py-2.5 rounded-full border border-brand-navy hover:bg-brand-navy hover:text-white transition tracking-widest">深い苦味</button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="coffee-list">
+                <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="morning">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-regular fa-sun mr-1"></i> 朝のおすすめ</span>
+                        <span class="text-sm font-medium text-brand-navy">¥550</span>
+                    </div>
+                    <h4 class="font-medium text-brand-navy text-xl mb-1 tracking-wider">朝凪（あさなぎ）</h4>
+                    <p class="text-xs text-brand-gray mb-4 font-light tracking-widest">軽くて飲みやすいNo.1</p>
+                    <p class="text-sm text-brand-gray leading-relaxed mb-6 font-light h-16">「気持ちよく一日を始めたいあなたへ」スッキリと爽やかに駆け抜けるような一杯。</p>
+                    <div class="text-xs text-brand-navy/70 border-t border-brand-sand pt-4 flex flex-col gap-2 font-light tracking-widest">
+                        <div class="flex justify-between"><span>酸味</span><span>●●●○○</span></div>
+                        <div class="flex justify-between"><span>苦味</span><span>●○○○○</span></div>
+                        <div class="flex justify-between"><span>コク</span><span>●●○○○</span></div>
+                    </div>
+                </div>
+
+                <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="standard">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-solid fa-star mr-1"></i> 当店イチオシ</span>
+                        <span class="text-sm font-medium text-brand-navy">¥550</span>
+                    </div>
+                    <h4 class="font-medium text-brand-navy text-xl mb-1 tracking-wider">TOKIYORI BLEND</h4>
+                    <p class="text-xs text-brand-gray mb-4 font-light tracking-widest">迷ったらまずこれ</p>
+                    <p class="text-sm text-brand-gray leading-relaxed mb-6 font-light h-16">自慢の濃厚バスクチーズケーキの口溶けに完璧にマッチするよう調整したオリジナルブレンド。</p>
+                    <div class="text-xs text-brand-navy/70 border-t border-brand-sand pt-4 flex flex-col gap-2 font-light tracking-widest">
+                        <div class="flex justify-between"><span>酸味</span><span>●●●○○</span></div>
+                        <div class="flex justify-between"><span>苦味</span><span>●●●○○</span></div>
+                        <div class="flex justify-between"><span>コク</span><span>●●●●●</span></div>
+                    </div>
+                </div>
+
+                <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="evening">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-solid fa-moon mr-1"></i> 夜のおすすめ</span>
+                        <span class="text-sm font-medium text-brand-navy">¥550</span>
+                    </div>
+                    <h4 class="font-medium text-brand-navy text-xl mb-1 tracking-wider">花結び（はなむすび）</h4>
+                    <p class="text-xs text-brand-gray mb-4 font-light tracking-widest">一日の終わりに</p>
+                    <p class="text-sm text-brand-gray leading-relaxed mb-6 font-light h-16">華快い豊かな香りとふんわり広がる甘み。ほっと落ち着いて旅を振り返りたい時間に。</p>
+                    <div class="text-xs text-brand-navy/70 border-t border-brand-sand pt-4 flex flex-col gap-2 font-light tracking-widest">
+                        <div class="flex justify-between"><span>酸味</span><span>●●○○○</span></div>
+                        <div class="flex justify-between"><span>苦味</span><span>●●○○○</span></div>
+                        <div class="flex justify-between"><span>コク</span><span>●●●○○</span></div>
+                    </div>
+                </div>
+
+                <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="morning">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-solid fa-bolt mr-1"></i> シャキッとしたい</span>
+                        <span class="text-sm font-medium text-brand-navy">¥550</span>
+                    </div>
+                    <h4 class="font-medium text-brand-navy text-xl mb-1 tracking-wider">ブライトブレンド</h4>
+                    <p class="text-xs text-brand-gray mb-4 font-light tracking-widest">酸味を味わう</p>
+                    <p class="text-sm text-brand-gray leading-relaxed mb-6 font-light h-16">酸味を少し強めに仕上げた、爽快感抜群のブレンド。心地よく気分転換したい時におすすめ。</p>
+                    <div class="text-xs text-brand-navy/70 border-t border-brand-sand pt-4 flex flex-col gap-2 font-light tracking-widest">
+                        <div class="flex justify-between"><span>酸味</span><span>●●●●●</span></div>
+                        <div class="flex justify-between"><span>苦味</span><span>●○○○○</span></div>
+                        <div class="flex justify-between"><span>コク</span><span>●●○○○</span></div>
+                    </div>
+                </div>
+
+                <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="standard">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-solid fa-mug-hot mr-1"></i> ラテ専用</span>
+                        <span class="text-sm font-medium text-brand-navy">¥580</span>
+                    </div>
+                    <h4 class="font-medium text-brand-navy text-xl mb-1 tracking-wider">UPLIFTING</h4>
+                    <p class="text-xs text-brand-gray mb-4 font-light tracking-widest">まろやかなミルク感</p>
+                    <p class="text-sm text-brand-gray leading-relaxed mb-6 font-light h-16">ラテを注文された際、ミルクのコクを引き立てつつコーヒーをしっかり感じられる黄金比の豆。</p>
+                    <div class="text-xs text-brand-navy/70 border-t border-brand-sand pt-4 flex flex-col gap-2 font-light tracking-widest">
+                        <div class="flex justify-between"><span>酸味</span><span>●●●○○</span></div>
+                        <div class="flex justify-between"><span>苦味</span><span>●●●○○</span></div>
+                        <div class="flex justify-between"><span>コク</span><span>●●●●○</span></div>
+                    </div>
+                </div>
+
+                <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="bitter">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-solid fa-feather mr-1"></i> 唯一の深煎り</span>
+                        <span class="text-sm font-medium text-brand-navy">¥550</span>
+                    </div>
+                    <h4 class="font-medium text-brand-navy text-xl mb-1 tracking-wider">ビターロースト</h4>
+                    <p class="text-xs text-brand-gray mb-4 font-light tracking-widest">ダンディーな気分</p>
+                    <p class="text-sm text-brand-gray leading-relaxed mb-6 font-light h-16">しっかりとした深いコーヒー本来の苦味を余すところなく味わいたい本格派へ。</p>
+                    <div class="text-xs text-brand-navy/70 border-t border-brand-sand pt-4 flex flex-col gap-2 font-light tracking-widest">
+                        <div class="flex justify-between"><span>酸味</span><span>●○○○○</span></div>
+                        <div class="flex justify-between"><span>苦味</span><span>●●●●●</span></div>
+                        <div class="flex justify-between"><span>コク</span><span>●●●●●</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white p-4 border border-brand-sand text-center text-sm text-brand-gray font-light tracking-widest max-w-2xl mx-auto rounded">
+                <i class="fa-solid fa-shield-heart text-brand-accent mr-2"></i>
+                妊娠中・授乳中の方にも安心の<span class="font-medium text-brand-navy">「ディカフェ（カフェインレス）」</span>もご用意しています。（アイス/ホット ¥600）
+            </div>
+        </div>
+    </section>
+
+    <!-- CALENDAR & EVENT -->
+    <section id="event" class="py-24 bg-white px-6 border-t border-brand-sand">
+        <div class="container mx-auto max-w-5xl fade-in">
+            <div class="text-center mb-16">
+                <span class="text-brand-accent text-sm font-bold tracking-widest block mb-4 uppercase">Calendar & Event</span>
+                <h2 class="text-2xl md:text-3xl font-medium tracking-widest text-brand-navy">営業日とイベント</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- カレンダー -->
+                <div class="bg-brand-light p-6 md:p-8 rounded border border-brand-sand text-center">
+                    <h3 class="text-lg font-medium text-brand-navy mb-4 tracking-widest flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-calendar-check text-brand-accent"></i> 今月の営業日
+                    </h3>
+                    <p class="text-xs text-brand-gray mb-6 font-light">水曜・木曜定休（臨時休業などはカレンダーをご確認ください）</p>
+                    <div class="bg-white rounded overflow-hidden shadow-sm border border-brand-sand/50 relative group">
+                        <img src="calendar.png" alt="今月の営業日カレンダー" class="w-full h-auto" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=600&q=80';">
+                    </div>
+                </div>
+
+                <!-- イベント＆お知らせ -->
+                <div class="p-6 md:p-8">
+                    <h3 class="text-xl font-medium text-brand-navy mb-6 tracking-widest border-b border-brand-sand pb-4">地域と人が交わる場所</h3>
+                    <p class="text-sm md:text-base text-brand-gray leading-loose font-light mb-8">
+                        TOKIYORI cafeは、ただのカフェとしてだけでなく、地域と人が交わる場所でもあります。<br><br>
+                        地域の大学生と共同開発した特別なコラボメニューのご提供や、店内の心地よい空間を活かした音楽イベントなども随時開催しております。<br><br>
+                        最新のイベント情報や日々の様子は、公式Instagramのストーリー等にて発信中です。
+                    </p>
+                    <div>
+                        <a href="https://www.instagram.com/tokiyori_cafe" target="_blank" class="inline-flex items-center gap-2 text-brand-navy font-medium hover:text-brand-accent transition tracking-widest text-sm border-b border-brand-navy hover:border-brand-accent pb-1">
+                            <i class="fa-brands fa-instagram"></i> Instagramをチェックする
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2階の宿 (HOTEL) -->
+    <section id="hotel" class="py-24 bg-hotel-pattern bg-cover bg-center bg-no-repeat relative px-6 fade-in">
+        <div class="container mx-auto max-w-4xl text-center relative z-10 text-white">
+            <span class="text-brand-accent text-sm font-bold tracking-widest block mb-4 uppercase">2F HOTEL</span>
+            <h2 class="text-2xl md:text-3xl font-medium mb-8 tracking-widest leading-relaxed">
+                moyai_舫<br class="md:hidden">
+                <span class="text-lg md:text-2xl font-light">～港に停泊する、町のフロント～</span>
+            </h2>
+            <p class="text-white/80 text-sm md:text-base leading-loose max-w-2xl mx-auto mb-10 font-light tracking-widest">
+                カフェ「TOKIYORI」の2階は、外川漁港の美しい船出と<br class="hidden md:block">
+                太平洋を一望できる極上の宿泊空間となっています。
+            </p>
+            <a href="https://www.booking.com/hotel/jp/1zu-xian-ding-moyai-fang-hai-gamu-noqian.ja.html" target="_blank" class="inline-block border border-brand-accent bg-brand-accent/10 hover:bg-brand-accent text-white hover:text-brand-navy font-medium px-8 py-4 transition tracking-widest text-sm rounded-sm">
+                お部屋の詳細とご予約はこちら
+            </a>
+        </div>
+    </section>
+
+    <!-- ACCESS & INFO -->
+    <section id="access" class="py-24 bg-white px-6">
+        <div class="container mx-auto max-w-5xl fade-in">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-medium text-brand-navy tracking-widest mb-4">アクセス & 駐車場</h2>
+                <p class="text-sm text-brand-gray font-light">お車でお越しの旅行者様も安心してお越しいただけるよう、駐車場をご用意しております。</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+                <!-- 店舗情報 -->
+                <div class="bg-brand-light p-8 md:p-10 rounded border border-brand-sand">
+                    <h3 class="text-xl font-medium text-brand-navy mb-6 tracking-widest border-b border-brand-sand pb-4">店舗基本情報</h3>
+                    <table class="w-full text-sm text-left">
+                        <tbody class="divide-y divide-brand-sand/50">
+                            <tr>
+                                <th class="py-4 text-brand-gray font-medium tracking-widest w-1/3">住所</th>
+                                <td class="py-4 text-brand-navy font-light leading-relaxed">〒288-0014<br>千葉県銚子市外川町1-10855-5</td>
+                            </tr>
+                            <tr>
+                                <th class="py-4 text-brand-gray font-medium tracking-widest">最寄駅</th>
+                                <td class="py-4 text-brand-navy font-light leading-relaxed">銚子電鉄「外川駅」から徒歩5分（約390m）</td>
+                            </tr>
+                            <tr>
+                                <th class="py-4 text-brand-gray font-medium tracking-widest">営業時間</th>
+                                <td class="py-4 text-brand-navy font-medium tracking-widest">11:00 〜 17:00<br><span class="text-xs font-light text-brand-gray">(L.O. 16:30)</span></td>
+                            </tr>
+                            <tr>
+                                <th class="py-4 text-brand-gray font-medium tracking-widest">定休日</th>
+                                <td class="py-4 text-red-800 font-medium tracking-widest">水曜日・木曜日</td>
+                            </tr>
+                            <tr>
+                                <th class="py-4 text-brand-gray font-medium tracking-widest">お席</th>
+                                <td class="py-4 text-brand-navy font-light leading-relaxed">16席（2名掛け×4、4名掛け×2）<br>※全席禁煙</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 駐車場情報 -->
+                <div class="p-8 md:p-10 rounded border border-brand-sand bg-white shadow-sm">
+                    <h3 class="text-xl font-medium text-brand-navy mb-6 tracking-widest flex items-center gap-3">
+                        <i class="fa-solid fa-square-p text-brand-accent text-2xl"></i>
+                        専用駐車場のご案内
+                    </h3>
+
+                    <div class="mb-6 rounded border border-brand-sand overflow-hidden shadow-sm">
+                        <img src="tokiyori 駐車場.jpg" alt="駐車場のご案内" class="w-full h-auto object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=600&q=80';">
+                    </div>
+
+                    <p class="text-sm text-brand-gray leading-relaxed font-light mb-8 bg-brand-light p-4 rounded border border-brand-sand/60">
+                        外川の漁師町は細い路地が多いため、事前にお車を停める場所をご確認いただくと大変スムーズです。
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <span class="bg-brand-navy text-white font-medium w-6 h-6 rounded-full flex items-center justify-center text-xs mt-0.5 shrink-0">1</span>
+                            <div>
+                                <h4 class="font-medium text-brand-navy tracking-widest">店舗のすぐ裏手（2台）</h4>
+                                <p class="text-sm text-brand-gray mt-1 font-light">店舗の裏にございます専用駐車場です。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <span class="bg-brand-navy text-white font-medium w-6 h-6 rounded-full flex items-center justify-center text-xs mt-0.5 shrink-0">2</span>
+                            <div>
+                                <h4 class="font-medium text-brand-navy tracking-widest">約80m離れた専用スペース（2台）</h4>
+                                <p class="text-sm text-brand-gray mt-1 font-light">少し離れた場所にも2台分の専用スペースを設けております。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start mt-4 pt-4 border-t border-brand-sand border-dashed">
+                            <span class="text-brand-accent mt-0.5 shrink-0"><i class="fa-solid fa-lightbulb"></i></span>
+                            <div>
+                                <h4 class="font-medium text-brand-navy tracking-widest">満車の場合は外川漁港の共用駐車場へ</h4>
+                                <p class="text-sm text-brand-gray mt-1 font-light leading-relaxed">目の前の外川漁港の共用駐車場も広く安全に駐車いただけます。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="rounded border border-brand-sand overflow-hidden grayscale hover:grayscale-0 transition duration-500">
+                <iframe src="https://maps.google.co.jp/maps?output=embed&q=TOKIYORI+cafe,千葉県銚子市外川町1-10855-5&t=m&hl=ja&z=18" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <div class="mt-8 text-center mb-24">
+                <a href="https://maps.google.com/?q=千葉県銚子市外川町1-10855-5" target="_blank" class="inline-flex items-center gap-3 bg-brand-navy text-white font-medium px-8 py-4 rounded-sm shadow hover:bg-brand-accent transition tracking-widest text-sm">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span>Googleマップアプリで開いてナビする</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フローティングInstagramボタン (画面右下に固定) -->
+    <a href="https://www.instagram.com/tokiyori_cafe" target="_blank" class="fixed bottom-6 right-6 z-50 bg-brand-accent text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-navy hover:scale-110 transition-all duration-300 group">
+        <i class="fa-brands fa-instagram text-2xl group-hover:animate-bounce"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-navy text-white pt-20 pb-10 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-serif font-light mb-6 tracking-[0.3em]">TOKIYORI</h2>
+            
+            <div class="text-sm font-light text-brand-sand/80 mb-8 tracking-widest leading-relaxed">
+                <p>〒288-0014 千葉県銚子市外川町1-10855-5</p>
+                <p class="mt-2">営業時間 11:00 〜 17:00 (L.O. 16:30)</p>
+                <p>定休日 水曜日・木曜日</p>
+            </div>
+
+            <p class="text-sm text-brand-sand/80 font-light mb-10 leading-relaxed tracking-widest border-t border-white/10 pt-8 inline-block max-w-lg">
+                お席のご予約やプリンのお取り置きなどは、<br class="md:hidden">
+                お気軽に公式InstagramのDMよりお問い合わせください。
+            </p>
+
+            <div class="flex justify-center gap-8 mb-12">
+                <a href="https://www.instagram.com/tokiyori_cafe" target="_blank" class="text-2xl text-brand-sand/60 hover:text-brand-accent transition transform hover:scale-110">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://maps.google.com/?q=千葉県銚子市外川町1-10855-5" target="_blank" class="text-2xl text-brand-sand/60 hover:text-brand-accent transition transform hover:scale-110">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </a>
+            </div>
+            
+            <p class="text-[10px] text-brand-sand/40 tracking-widest">&copy; 2026 TOKIYORI cafe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        const logo = document.getElementById('logo');
+        const logoSub = document.getElementById('logo-sub');
+        const navLinks = document.getElementById('nav-links');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white', 'shadow-md', 'py-2');
+                header.classList.remove('py-4');
+                logo.classList.replace('text-white', 'text-brand-navy');
+                if(logoSub) logoSub.classList.replace('text-white/70', 'text-brand-gray');
+                navLinks.classList.replace('text-white', 'text-brand-navy');
+                mobileBtn.classList.replace('text-white', 'text-brand-navy');
+            } else {
+                header.classList.remove('bg-white', 'shadow-md', 'py-2');
+                header.classList.add('py-4');
+                logo.classList.replace('text-brand-navy', 'text-white');
+                if(logoSub) logoSub.classList.replace('text-brand-gray', 'text-white/70');
+                navLinks.classList.replace('text-brand-navy', 'text-white');
+                mobileBtn.classList.replace('text-brand-navy', 'text-white');
+            }
+        });
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        function filterCoffee(tag) {
+            document.querySelectorAll('.coffee-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-navy', 'text-white');
+                btn.classList.add('bg-white', 'text-brand-navy');
+            });
+            
+            const activeBtn = document.getElementById('btn-' + tag);
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-brand-navy');
+                activeBtn.classList.add('bg-brand-navy', 'text-white');
+            }
+
+            const cards = document.querySelectorAll('.coffee-card');
+            cards.forEach(card => {
+                if (tag === 'all' || card.getAttribute('data-tag') === tag) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
