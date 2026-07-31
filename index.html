@@ -82,25 +82,29 @@
     </header>
 
     <!-- ファーストビュー (Hero) 写真背景版 -->
-    <section class="h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden bg-brand-navy bg-cover bg-center" style="background-image: url('./toki.jpg');">
+    <section class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden bg-brand-navy bg-cover bg-center" style="background-image: url('./toki.jpg');">
         <!-- 暗いオーバーレイ -->
         <div class="absolute inset-0 bg-brand-navy/50 z-10"></div>
 
         <!-- テキストコンテンツ -->
-        <div class="relative z-20 flex flex-col items-center">
-            <p class="text-brand-accent text-sm md:text-base font-bold tracking-[0.2em] mb-4 uppercase fade-in" style="transition-delay: 0.2s;">Choshi Tokawa Coast</p>
-            <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-[0.15em] leading-relaxed mb-6 fade-in drop-shadow-lg" style="transition-delay: 0.4s;">
-                海とゆっくり流れる時間。<br class="hidden md:block">
-                <span class="inline-block mt-2">外川で過ごす、特別なカフェタイム。</span>
+        <div class="relative z-20 flex flex-col items-center w-full">
+            <p class="text-brand-accent text-xs md:text-sm font-bold tracking-[0.2em] mb-4 uppercase fade-in" style="transition-delay: 0.2s;">Choshi Tokawa Coast</p>
+            
+            <!-- 文字サイズとスマホ用改行を調整 -->
+            <h1 class="text-white text-[22px] sm:text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-[0.15em] leading-loose md:leading-relaxed mb-6 fade-in drop-shadow-lg w-full" style="transition-delay: 0.4s;">
+                海とゆっくり<br class="sm:hidden">流れる時間。<br class="hidden sm:block">
+                <span class="block sm:inline-block mt-2 md:mt-4 text-[18px] sm:text-2xl md:text-4xl lg:text-5xl">外川で過ごす、<br class="sm:hidden">特別なカフェタイム。</span>
             </h1>
-            <p class="text-white/90 text-sm md:text-base max-w-2xl mx-auto leading-loose fade-in drop-shadow-md" style="transition-delay: 0.6s;">
+            
+            <p class="text-white/90 text-[13px] sm:text-sm md:text-base max-w-2xl mx-auto leading-loose fade-in drop-shadow-md px-2" style="transition-delay: 0.6s;">
                 本州最東端の静かな漁師町、外川。<br>
-                波の音と、コーヒーの香り。日々を忘れ、心ほどける大人の休息をここで。
+                波の音と、コーヒーの香り。<br class="sm:hidden">日々を忘れ、心ほどける大人の休息をここで。
             </p>
             
-            <div class="flex gap-4 mt-10 fade-in" style="transition-delay: 0.8s;">
-                <a href="#menu" class="border border-white/50 bg-brand-navy/40 hover:bg-brand-navy text-white px-6 py-3 rounded shadow hover:shadow-lg tracking-widest text-sm transition duration-300 backdrop-blur-sm">お品書き</a>
-                <a href="#access" class="border border-white/50 bg-white/10 hover:bg-white hover:text-brand-navy text-white px-6 py-3 rounded shadow hover:shadow-lg tracking-widest text-sm transition duration-300 backdrop-blur-sm">アクセス</a>
+            <!-- スマホではボタンを縦並びに -->
+            <div class="flex flex-col sm:flex-row gap-4 mt-10 w-full max-w-[240px] sm:max-w-none mx-auto sm:justify-center fade-in" style="transition-delay: 0.8s;">
+                <a href="#menu" class="border border-white/50 bg-brand-navy/40 hover:bg-brand-navy text-white px-6 py-3.5 sm:py-3 rounded shadow hover:shadow-lg tracking-widest text-sm transition duration-300 backdrop-blur-sm w-full sm:w-auto">お品書き</a>
+                <a href="#access" class="border border-white/50 bg-white/10 hover:bg-white hover:text-brand-navy text-white px-6 py-3.5 sm:py-3 rounded shadow hover:shadow-lg tracking-widest text-sm transition duration-300 backdrop-blur-sm w-full sm:w-auto">アクセス</a>
             </div>
         </div>
         
@@ -154,7 +158,7 @@
                         </h3>
                         <p class="text-sm md:text-base leading-relaxed pl-4 border-l border-brand-accent/40 font-light">
                             くつろいでいただいたり、ときにはtokiyoriメンバーとお話ししたり。<br>
-                            お店で過ごした実際の時間よりも”濃い”時間を過ごして頂きたいという想い。
+                            お店で過ごした実際の時間よりも”濃い”時間を過ごして頂きたいという思い。
                         </p>
                     </div>
 
@@ -166,7 +170,7 @@
                         <p class="text-sm md:text-base leading-relaxed pl-4 border-l border-brand-accent/40 font-light">
                             お茶をしにくる、パスタやスイーツを食べにくる。<br>
                             一人で勉強をしにきたり、デートをしにきたり、メンバーに会いにきたり…<br>
-                            どんなシチュエーションでも寄り添える場所でありたいという想い。
+                            どんなシチュエーションでも寄り添える場所でありたいという思い。
                         </p>
                     </div>
 
@@ -177,7 +181,7 @@
                         </h3>
                         <p class="text-sm md:text-base leading-relaxed pl-4 border-l border-brand-accent/40 font-light">
                             地元の方も観光でいらした方も、そして、まだこれていない方も。<br>
-                            ふと、「あ、トキヨリカフェ行きたいな」と時折思い出してもらいたいという想い。
+                            ふと、「あ、トキヨリカフェ行きたいな」と時折思い出してもらいたいという思い。
                         </p>
                     </div>
                 </div>
