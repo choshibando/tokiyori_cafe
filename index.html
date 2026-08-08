@@ -90,7 +90,6 @@
         <div class="relative z-20 flex flex-col items-center w-full">
             <p class="text-brand-accent text-xs md:text-sm font-bold tracking-[0.2em] mb-4 uppercase fade-in" style="transition-delay: 0.2s;">Choshi Tokawa Coast</p>
             
-            <!-- 文字サイズとスマホ用改行を調整 -->
             <h1 class="text-white text-[22px] sm:text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-[0.15em] leading-loose md:leading-relaxed mb-6 fade-in drop-shadow-lg w-full" style="transition-delay: 0.4s;">
                 海とゆっくり<br class="sm:hidden">流れる時間。<br class="hidden sm:block">
                 <span class="block sm:inline-block mt-2 md:mt-4 text-[18px] sm:text-2xl md:text-4xl lg:text-5xl">外川で過ごす、<br class="sm:hidden">特別なカフェタイム。</span>
@@ -101,7 +100,6 @@
                 波の音と、コーヒーの香り。<br class="sm:hidden">日々を忘れ、心ほどける大人の休息をここで。
             </p>
             
-            <!-- スマホではボタンを縦並びに -->
             <div class="flex flex-col sm:flex-row gap-4 mt-10 w-full max-w-[240px] sm:max-w-none mx-auto sm:justify-center fade-in" style="transition-delay: 0.8s;">
                 <a href="#menu" class="border border-white/50 bg-brand-navy/40 hover:bg-brand-navy text-white px-6 py-3.5 sm:py-3 rounded shadow hover:shadow-lg tracking-widest text-sm transition duration-300 backdrop-blur-sm w-full sm:w-auto">お品書き</a>
                 <a href="#access" class="border border-white/50 bg-white/10 hover:bg-white hover:text-brand-navy text-white px-6 py-3.5 sm:py-3 rounded shadow hover:shadow-lg tracking-widest text-sm transition duration-300 backdrop-blur-sm w-full sm:w-auto">アクセス</a>
@@ -308,6 +306,66 @@
                     </p>
                 </div>
             </div>
+            
+            <!-- Tea & Others (ドリンクメニュー追加) -->
+            <div class="max-w-4xl mx-auto mt-20 pt-16 border-t border-brand-sand">
+                <h3 class="text-xl font-medium text-brand-navy text-center mb-10 flex items-center justify-center gap-3 tracking-widest">
+                    <i class="fa-solid fa-mug-hot text-brand-accent"></i>
+                    Tea & Others
+                </h3>
+                <div class="bg-brand-light p-8 md:p-12 border border-brand-sand rounded shadow-sm">
+                    <div class="grid md:grid-cols-2 gap-x-16 gap-y-6">
+                        <!-- 左カラム (お茶・ラテ系) -->
+                        <ul class="space-y-6">
+                            <li class="flex justify-between items-end border-b border-brand-sand/60 pb-3">
+                                <span class="text-sm text-brand-navy tracking-widest font-medium">カフェラテ <span class="text-xs font-light text-brand-gray ml-1">(HOT/ICE)</span></span>
+                                <span class="text-sm font-medium text-brand-navy">¥650</span>
+                            </li>
+                            <li class="flex justify-between items-end border-b border-brand-sand/60 pb-3">
+                                <span class="text-sm text-brand-navy tracking-widest">紅茶 <span class="text-xs font-light text-brand-gray ml-1">(HOT/ICE)</span></span>
+                                <span class="text-sm font-medium text-brand-navy">¥500</span>
+                            </li>
+                            <li class="flex justify-between items-end border-b border-brand-sand/60 pb-3">
+                                <span class="text-sm text-brand-navy tracking-widest">ルイボスティー <span class="text-xs font-light text-brand-gray ml-1">(HOT/ICE)</span></span>
+                                <span class="text-sm font-medium text-brand-navy">¥500</span>
+                            </li>
+                            <li class="flex justify-between items-end border-b border-brand-sand/60 pb-3">
+                                <span class="text-sm text-brand-navy tracking-widest">ハーブティー <span class="text-xs font-light text-brand-gray ml-1">(HOT)</span></span>
+                                <span class="text-sm font-medium text-brand-navy">¥500</span>
+                            </li>
+                        </ul>
+                        <!-- 右カラム (自家製・ジュース系) -->
+                        <ul class="space-y-6">
+                            <li class="flex justify-between items-end border-b border-brand-sand/60 pb-3">
+                                <div class="flex flex-col">
+                                    <span class="text-[10px] text-brand-accent mb-0.5 tracking-widest font-bold">自家製シロップ</span>
+                                    <span class="text-sm text-brand-navy tracking-widest font-medium">自家製ジンジャーエール</span>
+                                </div>
+                                <span class="text-sm font-medium text-brand-navy">¥600</span>
+                            </li>
+                            <li class="flex justify-between items-end border-b border-brand-sand/60 pb-3">
+                                <div class="flex flex-col">
+                                    <span class="text-[10px] text-brand-accent mb-0.5 tracking-widest font-bold">自家製シロップ</span>
+                                    <span class="text-sm text-brand-navy tracking-widest font-medium">自家製レモネード</span>
+                                </div>
+                                <span class="text-sm font-medium text-brand-navy">¥600</span>
+                            </li>
+                            <li class="flex justify-between items-end border-b border-brand-sand/60 pb-3 pt-3 md:pt-0">
+                                <span class="text-sm text-brand-navy tracking-widest">100%みかんジュース</span>
+                                <span class="text-sm font-medium text-brand-navy">¥500</span>
+                            </li>
+                            <li class="flex justify-between items-end border-b border-brand-sand/60 pb-3">
+                                <span class="text-sm text-brand-navy tracking-widest">100%りんごジュース</span>
+                                <span class="text-sm font-medium text-brand-navy">¥500</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 text-right text-xs text-brand-gray font-light">
+                        こだわりのコーヒー類は、すぐ下の「珈琲案内」をご覧ください <i class="fa-solid fa-arrow-down ml-1 text-brand-accent"></i>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </section>
 
@@ -332,6 +390,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="coffee-list">
+                <!-- 朝凪 -->
                 <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="morning">
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-regular fa-sun mr-1"></i> 朝のおすすめ</span>
@@ -342,11 +401,12 @@
                     <p class="text-sm text-brand-gray leading-relaxed mb-6 font-light h-16">「気持ちよく一日を始めたいあなたへ」スッキリと爽やかに駆け抜けるような一杯。</p>
                     <div class="text-xs text-brand-navy/70 border-t border-brand-sand pt-4 flex flex-col gap-2 font-light tracking-widest">
                         <div class="flex justify-between"><span>酸味</span><span>●●●○○</span></div>
-                        <div class="flex justify-between"><span>苦味</span><span>●○○○○</span></div>
+                        <div class="flex justify-between"><span>苦味</span><span>●●○○○</span></div>
                         <div class="flex justify-between"><span>コク</span><span>●●○○○</span></div>
                     </div>
                 </div>
 
+                <!-- TOKIYORI BLEND -->
                 <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="standard">
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-solid fa-star mr-1"></i> 当店イチオシ</span>
@@ -358,10 +418,11 @@
                     <div class="text-xs text-brand-navy/70 border-t border-brand-sand pt-4 flex flex-col gap-2 font-light tracking-widest">
                         <div class="flex justify-between"><span>酸味</span><span>●●●○○</span></div>
                         <div class="flex justify-between"><span>苦味</span><span>●●●○○</span></div>
-                        <div class="flex justify-between"><span>コク</span><span>●●●●●</span></div>
+                        <div class="flex justify-between"><span>コク</span><span>●●●●○</span></div>
                     </div>
                 </div>
 
+                <!-- 花結び -->
                 <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="evening">
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-solid fa-moon mr-1"></i> 夜のおすすめ</span>
@@ -377,6 +438,7 @@
                     </div>
                 </div>
 
+                <!-- ブライトブレンド -->
                 <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="morning">
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-solid fa-bolt mr-1"></i> シャキッとしたい</span>
@@ -386,12 +448,13 @@
                     <p class="text-xs text-brand-gray mb-4 font-light tracking-widest">酸味を味わう</p>
                     <p class="text-sm text-brand-gray leading-relaxed mb-6 font-light h-16">酸味を少し強めに仕上げた、爽快感抜群のブレンド。心地よく気分転換したい時におすすめ。</p>
                     <div class="text-xs text-brand-navy/70 border-t border-brand-sand pt-4 flex flex-col gap-2 font-light tracking-widest">
-                        <div class="flex justify-between"><span>酸味</span><span>●●●●●</span></div>
-                        <div class="flex justify-between"><span>苦味</span><span>●○○○○</span></div>
+                        <div class="flex justify-between"><span>酸味</span><span>●●●●○</span></div>
+                        <div class="flex justify-between"><span>苦味</span><span>●●○○○</span></div>
                         <div class="flex justify-between"><span>コク</span><span>●●○○○</span></div>
                     </div>
                 </div>
 
+                <!-- UPLIFTING -->
                 <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="standard">
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-solid fa-mug-hot mr-1"></i> ラテ専用</span>
@@ -402,11 +465,12 @@
                     <p class="text-sm text-brand-gray leading-relaxed mb-6 font-light h-16">ラテを注文された際、ミルクのコクを引き立てつつコーヒーをしっかり感じられる黄金比の豆。</p>
                     <div class="text-xs text-brand-navy/70 border-t border-brand-sand pt-4 flex flex-col gap-2 font-light tracking-widest">
                         <div class="flex justify-between"><span>酸味</span><span>●●●○○</span></div>
-                        <div class="flex justify-between"><span>苦味</span><span>●●●○○</span></div>
+                        <div class="flex justify-between"><span>苦味</span><span>●●●●○</span></div>
                         <div class="flex justify-between"><span>コク</span><span>●●●●○</span></div>
                     </div>
                 </div>
 
+                <!-- ビターロースト -->
                 <div class="coffee-card bg-white p-8 rounded border border-brand-sand shadow-sm transition-all duration-300" data-tag="bitter">
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-brand-accent text-xs font-medium tracking-widest"><i class="fa-solid fa-feather mr-1"></i> 唯一の深煎り</span>
@@ -515,7 +579,7 @@
                             </tr>
                             <tr>
                                 <th class="py-4 text-brand-gray font-medium tracking-widest">定休日</th>
-                                <td class="py-4 text-red-800 font-medium tracking-widest">水曜日・木曜日（8月は木曜営業日有）</td>
+                                <td class="py-4 text-red-800 font-medium tracking-widest">水曜日・木曜日</td>
                             </tr>
                             <tr>
                                 <th class="py-4 text-brand-gray font-medium tracking-widest">お席</th>
@@ -594,7 +658,7 @@
             <div class="text-sm font-light text-brand-sand/80 mb-8 tracking-widest leading-relaxed">
                 <p>〒288-0014 千葉県銚子市外川町1-10855-5</p>
                 <p class="mt-2">営業時間 11:00 〜 17:00 (L.O. 16:30)</p>
-                <p>定休日 水曜日・木曜日（8月は木曜営業日有）</p>
+                <p>定休日 水曜日・木曜日</p>
             </div>
 
             <p class="text-sm text-brand-sand/80 font-light mb-10 leading-relaxed tracking-widest border-t border-white/10 pt-8 inline-block max-w-lg">
